@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Autotileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/dummy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/player1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/player1.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,6 +20,7 @@ scale = Vector2( 0.944624, 0.944624 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 170, 370 )
 scale = Vector2( 0.944624, 0.944624 )
+script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 rotating = true

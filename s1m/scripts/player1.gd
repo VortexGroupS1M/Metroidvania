@@ -50,13 +50,13 @@ func _physics_process(delta):
         attack()
 
 func attack() -> void:
-    var attackCol: Area2D
-    if dir.y == 0:
-        $Side_Attack.position.x = abs($Side_Attack.position.x)*dir.x
-        attackCol = $Side_Attack
-    else:
-        $Top_Attack.position.y = abs($Top_Attack.position.y)*dir.y
-        attackCol = $Top_Attack
-    var cols: Array = attackCol.get_overlapping_bodies()
-    for collider in cols:
-        collider.position.y -= 2
+	var attackCol: Area2D
+	if dir.y == 0:
+		$Side_Attack.position.x = abs($Side_Attack.position.x)*dir.x
+		attackCol = $Side_Attack
+	else:
+		$Top_Attack.position.y = abs($Top_Attack.position.y)*dir.y
+		attackCol = $Top_Attack
+	var cols: Array = attackCol.get_overlapping_bodies()
+	for collider in cols:
+		collider.get_node("Health").damage(200)

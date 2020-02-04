@@ -3,13 +3,13 @@
 [ext_resource path="res://scripts/player1.gd" type="Script" id=1]
 [ext_resource path="res://assets/character1/pose1.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.57371, 16.1953 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.73056, 15.3849 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 12.9433, 5.91929 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -26,7 +26,7 @@ offset = Vector2( 2, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.426, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Side_Attack" type="Area2D" parent="."]
 position = Vector2( 16.707, 0 )
@@ -34,7 +34,7 @@ collision_layer = 2
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Side_Attack"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Top_Attack" type="Area2D" parent="."]
 position = Vector2( 0, -22.567 )
@@ -42,4 +42,4 @@ collision_layer = 2
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top_Attack"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
