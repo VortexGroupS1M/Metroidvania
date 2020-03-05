@@ -16,9 +16,12 @@ var vel: Vector2 = Vector2(0,0);
 var gravDefier: float = 0;
 var dir: Vector2 = Vector2(1,0)
 
+onready var Dummy = get_tree().get_root().get_node("Node2D/Dummy")
+var dialogShowing: bool = false
+
 func _physics_process(_delta):
 	gravDefier = max(0, gravDefier - gravAcc);
-	print(gravDefier)
+	#print(gravDefier)
 	var move: Vector2 = Vector2(0,0);
 	
 	#Movement input
@@ -62,6 +65,21 @@ func _physics_process(_delta):
 		dir.y = 0
 	if Input.is_action_just_pressed("attack"):
 		attack()
+	
+	#NPC dialog show if close and dummy exists
+	if get_tree().get_root().has_node("Node2D/Dummy"):
+		if abs(position.x - Dummy.position.x) < 100 && abs(position.y - Dummy.position.y) < 100:
+			if dialogShowing == false:
+					dialogShowing = true
+					get_tree().get_root().get_node("Node2D/Dummy/Dialog/RichTextLabel").showDialog()
+		else:
+				dialogShowing = false
+				get_tree().get_root().get_node("Node2D/Dummy/Dialog/RichTextLabel").hideDialog()
+				
+
+
+		
+		
 
 func jump() -> void:
 	canJump = true;
