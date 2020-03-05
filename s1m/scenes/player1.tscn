@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/playerOLD.gd" type="Script" id=1]
-[ext_resource path="res://assets/character1/pose1.png" type="Texture" id=2]
+[ext_resource path="res://assets/character1/PlayerTemp1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.57371, 16.1953 )
+extents = Vector2( 9.57371, 21.1309 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 6.73056, 15.3849 )
@@ -20,9 +20,10 @@ gravity = 600.0
 walkSpeed = 300.0
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.90735e-06, 0 )
+position = Vector2( 0, -3 )
 texture = ExtResource( 2 )
 offset = Vector2( 2, 0 )
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.426, 0 )

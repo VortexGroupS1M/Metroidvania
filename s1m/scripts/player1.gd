@@ -65,17 +65,6 @@ func _physics_process(_delta):
 		dir.y = 0
 	if Input.is_action_just_pressed("attack"):
 		attack()
-	
-	#NPC dialog show if close and dummy exists
-	if get_tree().get_root().has_node("Node2D/Dummy"):
-		if abs(position.x - Dummy.position.x) < 100 && abs(position.y - Dummy.position.y) < 100:
-			if dialogShowing == false:
-					dialogShowing = true
-					get_tree().get_root().get_node("Node2D/Dummy/Dialog/RichTextLabel").showDialog()
-		else:
-				dialogShowing = false
-				get_tree().get_root().get_node("Node2D/Dummy/Dialog/RichTextLabel").hideDialog()
-				
 
 
 		
