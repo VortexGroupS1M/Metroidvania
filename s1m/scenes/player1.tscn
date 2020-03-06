@@ -21,6 +21,7 @@ walkSpeed = 300.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -3 )
+scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 offset = Vector2( 2, 0 )
 flip_h = true
