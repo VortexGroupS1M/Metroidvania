@@ -1,19 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/DynamicFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/npcDialog.gd" type="Script" id=2]
+[ext_resource path="res://scenes/DialogBox.gd" type="Script" id=3]
 
-[node name="Polygon2D" type="Polygon2D"]
-position = Vector2( -58.8066, -23.8555 )
-scale = Vector2( 0.328036, 0.222576 )
+[node name="Position" type="Node2D"]
+scale = Vector2( 1, 1 )
+script = ExtResource( 3 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( -189.602, -111.301 )
 color = Color( 0.141176, 0.141176, 0.141176, 1 )
 polygon = PoolVector2Array( 390.201, 179.714, 390.201, 35.9427, 0, 35.9427, 0, 179.714 )
 
-[node name="dialogCharacterShow" type="Timer" parent="."]
+[node name="dialogCharacterShow" type="Timer" parent="Polygon2D"]
 wait_time = 0.05
 autostart = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
 margin_left = 18.0
 margin_top = 59.0
 margin_right = 369.0
@@ -24,4 +28,4 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="dialogCharacterShow" to="RichTextLabel" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Polygon2D/dialogCharacterShow" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]
