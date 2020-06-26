@@ -19,6 +19,7 @@ var dir: Vector2 = Vector2(1,0)
 onready var Dummy = get_tree().get_root().get_node("Node2D/Dummy")
 var dialogShowing: bool = false
 
+
 func _physics_process(_delta):
 	gravDefier = max(0, gravDefier - gravAcc);
 	#print(gravDefier)

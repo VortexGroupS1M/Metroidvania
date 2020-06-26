@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Src/Classes/Actor/Actor.gd" type="Script" id=1]
+[ext_resource path="res://Src/Statemachine/Statemachine.gd" type="Script" id=2]
+
+[node name="Actor" type="KinematicBody2D" groups=[
+"Actor",
+]]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="."]
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="Area"]
+
+[node name="FocusPoint" type="Position2D" parent="."]
+
+[node name="Statemachine" type="Node" parent="."]
+script = ExtResource( 2 )
