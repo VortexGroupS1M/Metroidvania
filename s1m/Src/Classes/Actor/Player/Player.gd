@@ -7,11 +7,13 @@ const JUMP_MIN_HEIGHT := 80
 const MAX_SPEED := 250
 const ACCELERATION_TIME := 0.05
 
+
 var jump_impulse: int
 var jump_gravity_start: int
 var jump_gravity_release: int
 var jump_gravity_default: int
 var acceleration: int
+
 
 func _init() -> void:
 	#Calculate the jump impulse and gravities based on the constants
@@ -25,4 +27,3 @@ func _init() -> void:
 		MAX_SPEED*sqrt(JUMP_MAX_HEIGHT*2/float(jump_gravity_release))
 		)
 	print("The minimum jump length is ", jump_min_length)
-
